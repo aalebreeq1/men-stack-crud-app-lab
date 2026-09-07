@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= car.name %></title>
+    <title>
+        <%= car.name %>
+    </title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/single-car-style.css">
 </head>
+
 <body>
-    
+    <%- include('partials/navbar')%>
+
+        <div class="page-content">
+            <a href="/cars" class="back-link">&larr; Back to All Cars</a>
+
+            <div id="car-div">
+                <div id="car-img">
+                    <img src="<%= car.img_url %>" alt="<%= car.name %> img">
+                </div>
+                <div id="car-content">
+                    <h1>
+                        <%= car.name %>
+                    </h1>
+                    <p><strong>Type:</strong> <span>
+                            <%= car.type %>
+                        </span></p>
+                    <p><strong>Make:</strong> <span>
+                            <%= car.make %>
+                        </span></p>
+                    <p><strong>Year:</strong> <span>
+                            <%= car.year %>
+                        </span></p>
+                    <p><strong>MSRP:</strong> <span>
+                            <%= car.MSRP %> BHD
+                        </span></p>
+                    <p><strong>Dealer:</strong> <span>
+                            <%= car.dealer %>
+                        </span></p>
+                    <p><strong>Engine:</strong> <span>
+                            <%= car.engine_type %>
+                        </span></p>
+
+                    <div class="action-buttons">
+                        <a href="/cars/<%= car._id %>/edit" class="btn-edit">Edit</a>
+                        <form action="/cars/<%= car._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn-delete">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>
