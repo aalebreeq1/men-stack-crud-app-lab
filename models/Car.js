@@ -16,11 +16,6 @@ const carSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    model:{
-        type:String,
-        required: true,
-        trim: true
-    },
     year:{
         type:Number,
         required: true,
@@ -31,7 +26,7 @@ const carSchema = new mongoose.Schema({
         min: 0 
 
     },
-    Dealer:{
+    dealer:{
         type:String,
         required: true,
         trim: true
@@ -39,6 +34,9 @@ const carSchema = new mongoose.Schema({
     engine_type:{
         type:String,
         enum:['Petrol', 'Diesel', 'Electric', 'Hybrid']
+    },
+    img_url:{
+        type:String
     }
 
 },{timestamps: true})
