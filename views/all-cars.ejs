@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars</title>
+    <link rel="stylesheet" href="/all-cars-style.css">
+    <link rel="stylesheet" href="/style.css">
+
 </head>
+
 <body>
-    <h1> View all Cars </h1>
-    
+    <%- include('partials/navbar')%>
+        <h1> View all Cars </h1>
+        <div id="grid">
+            <% for(let car of cars) { %>
+                <div class="box">
+                    <div id="">
+
+                    </div>
+                </div>
+                <% }%>
+        </div>
 </body>
+
 </html>

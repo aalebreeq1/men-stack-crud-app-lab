@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-    <h1>Welcome to the Car Information System</h1>
-    
+    <%- include('partials/navbar')%>
+
+        <div class="page-content">
+            <h1>Welcome to the Car Information System</h1>
+            <p>
+                This system allows you to view and manage information about various cars, including their make, model,
+                year, type, and MSRP.
+            </p>
+            <p>
+                You can create new car entries, update existing ones, and delete cars that are no longer relevant.
+            </p>
+        </div>
 </body>
+
 </html>
