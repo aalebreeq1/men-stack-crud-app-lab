@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit- <%= car.name%>
+    </title>
+    <link rel="stylesheet" href="/create-cars-style.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <%- include('partials/navbar') %>
+
+        <div class="form-container">
+            <h1>Edit Car</h1>
+
+            <form action="/cars/<%= car._id %>?_method=PUT" method="POST">
+                <label for="name">Car Name:</label>
+                <input type="text" id="name" name="name" required value="<%= car.name%>">
+
+                <label for="type">Car Type:</label>
+                <select id="type" name="type" required>
+                    <option value="<%= car.type %>" selected><%= car.type %></option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Coupe">Coupe</option>
+                    <option value="Crossover">Crossover</option>
+                </select>
+
+                <label for="make">Car Make:</label>
+                <input type="text" id="make" name="make" required value="<%= car.make  %>">
+
+                <label for="year">Car Year:</label>
+                <input type="number" id="year" name="year" required value="<%= car.year %>">
+
+                <label for="MSRP">Car MSRP in BHD:</label>
+                <input type="number" id="MSRP" name="MSRP" required value="<%= car.MSRP %>">
+
+                <label for="dealer">Car Dealer:</label>
+                <input type="text" id="dealer" name="dealer" required value="<%= car.dealer %>">
+
+
+                <label for="engine_type">Car Engine Type:</label>
+                <select id="engine_type" name="engine_type" required>
+                    <option value="<%= car.engine_type %>" selected><%= car.engine_type %></option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Hybrid">Hybrid</option>
+                </select>
+
+                <label for="img_url">Car Image URL:</label>
+                <input type="text" id="img_url" name="img_url" required value="<%= car.img_url %>">
+
+                <button type="submit">Update Car</button>
+            </form>
+        </div>
+</body>
+
+</html>
